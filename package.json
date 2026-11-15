@@ -9,7 +9,8 @@
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "prepare": "husky",
-    "knip": "knip"
+    "knip": "knip",
+    "check": "tsc --noEmit"
   },
   "author": "pithos",
   "license": "MIT",
