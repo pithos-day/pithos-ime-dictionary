@@ -73,6 +73,12 @@ export const parseDictionary = (data: unknown, source: string): DictionaryEntry[
   return entries as DictionaryEntry[];
 };
 
-/** Mozc のインポート形式（読み・単語・品詞・コメントのタブ区切り、UTF-8）に変換する */
+/**
+ * Mozc は BOM がないと先頭 1024 バイトから文字コードを推測し、記号や顔文字が多いと Shift_JIS と誤判定する。
+ * BOM があれば UTF-8 と判定され、読み込み時に BOM は取り除かれる。
+ */
+const UTF8_BOM = '﻿';
+
+/** Mozc のインポート形式（読み・単語・品詞・コメントのタブ区切り、BOM 付き UTF-8）に変換する */
 export const toTsv = (entries: readonly DictionaryEntry[]): string =>
-  entries.map(({ reading, word, pos, comment = '' }) => `${reading}\t${word}\t${pos}\t${comment}\n`).join('');
+  UTF8_BOM + entries.map(({ reading, word, pos, comment = '' }) => `${reading}\t${word}\t${pos}\t${comment}\n`).join('');
