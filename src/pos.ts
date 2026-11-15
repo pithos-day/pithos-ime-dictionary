@@ -2,7 +2,7 @@
  * Mozc のユーザー辞書で使える品詞。
  * google/mozc の src/data/rules/user_pos.def と同じ並び。
  */
-export const POS_LIST = [
+const POS_LIST = [
   '品詞なし',
   '名詞',
   '短縮よみ',
