@@ -1,0 +1,28 @@
+{
+  "name": "pithos-ime-dictionary",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Mozc / Google 日本語入力のユーザー辞書。JSON で書いた辞書をインポート用の TSV に変換する",
+  "type": "module",
+  "scripts": {},
+  "author": "pithos",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pithos-day/pithos-ime-dictionary.git"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.4.0",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "^7.0.2"
+  }
+}
