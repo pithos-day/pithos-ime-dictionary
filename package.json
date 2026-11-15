@@ -4,7 +4,10 @@
   "private": true,
   "description": "Mozc / Google 日本語入力のユーザー辞書。JSON で書いた辞書をインポート用の TSV に変換する",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "lint": "biome check .",
+    "lint:fix": "biome check --write ."
+  },
   "author": "pithos",
   "license": "MIT",
   "repository": {
@@ -22,6 +25,7 @@
     }
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.6.7",
     "@types/node": "^24.19.2",
     "typescript": "^7.0.2"
   }
